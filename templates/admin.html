@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Design by foolishdeveloper.com -->
+    <title>Login Panel</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <style media="screen">
+        /* CSS styles... */ 
+        *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #080710;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #e90303,
+        #f62323
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #e90303,
+        #f62323
+    );
+    right: -30px;
+    bottom: -80px;
+}
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+
+
+
+.btn.btn1 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #e81010;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn2 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #e81010;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn3 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #e81010;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn4 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #26e810;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn5 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #26e810;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn6 {
+    margin-top: 5px;
+    width: 30%;
+    background-color: #26e810;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn.btn7 {
+    margin-top: 10px;
+    width: 100%;
+    background-color: #e81010;
+    color: #ffffff;
+    padding: 15px 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.social{
+  margin-top: 30px;
+  display: flex;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form id="adminForm" action="" method="POST">
+        <h3>Admin Panel</h3>
+
+        <label for="email">Email</label>
+        <input type="text" name="email" placeholder="Enter Email" id="email">
+
+        <label for="url">URL</label>
+        <input type="text" name="url" placeholder="Enter URL" id="url">
+
+        <button type="button" class="btn btn1" data-action="block_user">Block this User</button>
+        <button type="button" class="btn btn2" data-action="block_url_for_user">Block URL For This User</button>
+        <button type="button" class="btn btn3" data-action="block_url_for_all">Block URL For all Users</button>
+        <button type="button" class="btn btn4" data-action="allow_user_access">Allow User Access</button>
+        <button type="button" class="btn btn5" data-action="unblock_url_for_user">UnBlock URL For This User</button>
+        <button type="button" class="btn btn6" data-action="unblock_url_for_all">UnBlock URL For all Users</button>  
+        <button type="button" class="btn btn7" onclick="logout()">LOG OUT</button>
+    </form>
+    //1-logout
+    <script>
+	 function logout() {
+                    // You can add any additional logic here before logging out
+    
+                    // Redirect to the logout route in your Flask app
+                    window.location.href = '/logout';
+                }
+    </script>
+    //2-block a url from specific user 
+    <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+    function blockUrlForUser(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value;
+        const url = document.getElementById('url').value;
+
+        if (!email || !url) {
+            alert('Please enter both email and URL.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('url', url);
+
+        fetch('/admin/block_url_for_user', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('email').value = '';
+                document.getElementById('url').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const blockUrlButton = document.querySelector('.btn.btn2');
+    if (blockUrlButton) {
+        blockUrlButton.addEventListener('click', blockUrlForUser);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+    </script> 
+    //3-block url for all users 
+    <script>    
+    document.addEventListener('DOMContentLoaded', () => {
+    function blockUrlForAll(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const url = document.getElementById('url').value;
+
+        if (!url) {
+            alert('Please enter a URL.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('url', url);
+
+        fetch('/admin/block_url_for_all', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('url').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const blockUrlForAllButton = document.querySelector('.btn.btn3');
+    if (blockUrlForAllButton) {
+        blockUrlForAllButton.addEventListener('click', blockUrlForAll);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+    </script>   
+    //4-allow user access 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    function allowUserAccess(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value;
+
+        if (!email) {
+            alert('Please enter an email.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('email', email);
+
+        fetch('/admin/allow_user_access', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('email').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const allowAccessButton = document.querySelector('.btn.btn4');
+    if (allowAccessButton) {
+        allowAccessButton.addEventListener('click', allowUserAccess);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+    </script>     
+    //5-unblock_url_for_user 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    function unblockUrlForUser(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value;
+        const url = document.getElementById('url').value;
+
+        if (!email || !url) {
+            alert('Please enter both email and URL.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('email', email);
+        formData.append('url', url);
+
+        fetch('/admin/unblock_url_for_user', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('email').value = '';
+                document.getElementById('url').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const unblockUrlButton = document.querySelector('.btn.btn5');
+    if (unblockUrlButton) {
+        unblockUrlButton.addEventListener('click', unblockUrlForUser);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+    </script>    
+    //6-block user 
+    <script>    
+        document.addEventListener('DOMContentLoaded', () => {
+    function blockUser(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const email = document.getElementById('email').value;
+
+        if (!email) {
+            alert('Please enter an email.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('email', email);
+
+        fetch('/admin/block_user', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('email').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const blockUserButton = document.querySelector('.btn.btn1');
+    if (blockUserButton) {
+        blockUserButton.addEventListener('click', blockUser);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+    </script> 
+    //7-unblock for all users 
+    <script>   
+      document.addEventListener('DOMContentLoaded', () => {
+    function unblockAllUsers(event) {
+        event.preventDefault(); // Prevent form submission
+
+        const url = document.getElementById('url').value;
+
+        if (!url) {
+            alert('Please enter a URL.');
+            return;
+        }
+
+        const formData = new FormData();
+        formData.append('url', url);
+
+        fetch('/admin/unblock_all_users', {
+            method: 'POST',
+            body: formData,
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.message) {
+                alert(data.message);
+                document.getElementById('url').value = '';
+            } else if (data.error) {
+                alert(data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while processing your request.');
+        });
+    }
+
+    const unblockAllUsersButton = document.querySelector('.btn.btn6'); // Assuming .btn.btn6 is the class for your button
+    if (unblockAllUsersButton) {
+        unblockAllUsersButton.addEventListener('click', unblockAllUsers);
+    } else {
+        console.log('Button not found');
+    }
+});
+
+
+    </script>
+
+
+</body>
+</html>

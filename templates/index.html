@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> NATproxy </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:500,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      } 
+    .attribution {
+        text-align: center;
+        padding: 20px;
+        background-color: #f8f8f8;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .attribution h2 {
+        font-size: 24px;
+        color: #333;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        margin: 10px 0;
+    }
+
+    li a {
+        text-decoration: none;
+        color: #007BFF;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+    }
+
+    li a:hover {
+        color: #0056b3;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="root">
+      <div class="app-header">
+        <input type="checkbox" id="nav-visible" tabindex="-1" />
+
+        <div class="navbar">
+          <h1 class="title">NATproxy</h1>
+
+          <label for="nav-visible" class="toggle-nav">
+            <svg class="icon-menu" width="25" viewBox="0 0 512 512">
+              <!-- SVG content here -->
+            </svg>
+          </label>
+
+          <nav class="navbar-nav">
+            <a href="/">Fast and reliable</a>
+            <a href="/">Compatible With Tor Chaining</a>
+            <a href="/">Smart ML Integration</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="intro">
+        <div class="content">
+          <h1 class="title">More than just a proxy</h1>
+          <p class="desc">
+            The most advanced free and secure web proxy service. Supports any kind of sites: video hostings, search engines, social networks, e-mail services, and much more. Browse your favorite resources such as Facebook, Google, Gmail, Twitter, and also have Youtube unblocked using encrypted connection.
+          </p>
+          
+<button class="btn btn-primary" onclick="logout()">LOGOUT</button>
+
+<!-- Existing code... -->
+
+<script>
+    function logout() {
+        // You can add any additional logic here before logging out
+
+        // Redirect to the logout route in your Flask app
+        window.location.href = '/logout';  
+    }
+
+    $(document).ready(function () {
+        // Existing code...
+    });
+</script>
+        </div>
+
+        <div class="img-wrapper">
+          <img src="{{ url_for('static', filename='illustration-working.svg') }}" alt="" role="presentation" />
+        </div>
+
+        <form class="shorten-url-form">
+          <input type="url" id="url" placeholder="paste URL here&hellip;" />
+          <button type="submit" class="btn btn-primary">browse!</button>
+      </form>
+      <div class="stats">
+        <div class="content">
+          <h1 class="title">ML&Advanced Proxy Chaining</h1>
+          <p class="desc">
+
+            Proxy Chaining is your passport to a fortress of privacy. It's a sophisticated method that involves linking multiple proxy servers in a sequence, creating an impenetrable shield around your online activities. With each connection hop, your data is encrypted and rerouted through various servers across different locations worldwide, rendering you invisible to prying eyes.
+            To further enhance your privacy and security, we employ machine learning to optimize our proxy chaining process. By analyzing user browsing patterns and behaviors, we can determine the optimal intervals for purging cached data. This ensures that your privacy is not compromised by lingering traces of your online activities.
+            Our machine learning algorithms continuously adapt to evolving online threats and privacy concerns, ensuring that your data remains protected. With proxy chaining and intelligent cache management, you can rest assured that your online footprint is minimized, and your privacy is safeguarded.          </p>
+
+          <div class="cards">
+            <div class="card">
+              <div class="card-icon">
+                <img src="{{ url_for('static', filename='icon-brand-recognition.svg') }}" alt="" role="presentation" />
+              </div>
+              <div class="card-title">Driven by Passion and Innovation</div>
+              <div class="card-body">
+                Driven by our passion for technology and innovation, we decided to harness our skills to develop a cutting-edge Proxy Server.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <img src="{{ url_for('static', filename='icon-detailed-records.svg') }}" alt="" role="presentation" />
+              </div>
+              <div class="card-title">Our Mission</div>
+              <div class="card-body">
+                This project represents our commitment to enhancing the college experience for our peers, fostering a sense of community, and contributing to campus life.
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">
+                <img src="{{ url_for('static', filename='icon-fully-customizable.svg') }}" alt="" role="presentation" />
+              </div>
+              <div class="card-title">More Than Just a Website</div>
+              <div class="card-body">
+                "NATProxy" is more than just a Proxy Server; it's the first step towards having a safe cyber network on campus.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="start-now">
+        <h1 class="title">Help Us Evolve</h1>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+          $(document).ready(function () {
+              $('form').submit(function (event) {
+                  event.preventDefault();
+                  console.log('Form submitted.');
+      
+                  var url = $('#url').val();
+      
+                  $.ajax({
+                      type: 'POST',
+                      url: '/',
+                      data: {
+                          url: url
+                      },
+                      success: function (response) {
+                          console.log('AJAX success:', response);
+                          if(response && response.requested_url) {
+                              window.location.href = response.requested_url;
+                          } else {
+                              console.error('URL is undefined', response);
+                          }
+                      },
+                      error: function (error) {
+                          console.error('AJAX error:', error);
+                      }
+                  });
+              });
+          });
+      </script> 
+      
+      <!-- Additional content as required -->

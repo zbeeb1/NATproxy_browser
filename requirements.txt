@@ -1,0 +1,7 @@
+Flask
+Flask-Login
+Flask-SQLAlchemy
+Flask-Limiter
+Flask-Bcrypt
+requests
+scikit-learn
